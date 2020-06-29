@@ -2,15 +2,20 @@ import React from "react";
 import styled from "styled-components";
 
 import FlexBox from "../Layout/FlexBox";
+import Container from "../Layout/Container";
+import { DownloadData } from "../data";
 
-const HeroContent = () => {
+const HeroContent = ({ theme }) => {
+  console.log(DownloadData);
   const ContentContainer = styled.div`
+    padding: 5rem 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     width: 100%;
+    z-index: 200;
   `;
 
   const HeroHeading = styled.h1`
@@ -29,6 +34,51 @@ const HeroContent = () => {
     margin: 0 auto;
   `;
 
+  const Box = styled.div`
+    cursor: pointer;
+    margin-top: 3rem;
+    padding: 2rem 3rem;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 24px;
+    max-width: 320px;
+    box-shadown: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    img {
+      width: 75px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  `;
+
+  const DownloadButton = styled.button`
+    border: 1px solid ${theme.secondaryText};
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 18px 0;
+    color: ${theme.secondaryText};
+    background: transparent;
+    width: 250px;
+    height: 60px;
+    line-height: 60px;
+    font-family: inherit;
+
+    ${Box}:hover & {
+      background: ${theme.blue};
+      color: white;
+      border: none;
+    }
+  `;
+
+  const Remarks = styled.p`
+    font-size: 14px;
+    color: #6d7593;
+  `;
+
   return (
     <ContentContainer>
       <HeroHeading>Design for the color impaired</HeroHeading>
@@ -38,12 +88,24 @@ const HeroContent = () => {
         showing you in real time what people with common color vision
         impairments will see.
       </HeroText>
-
-      <FlexBox
-        direction="row"
-        justify="space-between"
-        align-items="center"
-      ></FlexBox>
+      <Container size="narrow">
+        <FlexBox direction="row" justify="space-between" align-items="center">
+          {DownloadData.map((e) => {
+            return (
+              <Box key={e.id}>
+                <div>
+                  <img src={`assets/${e.img}`} alt={e.title} />
+                </div>
+                <div>
+                  {" "}
+                  <DownloadButton> Download for {e.title}</DownloadButton>
+                </div>
+                <Remarks>{e.remarks}</Remarks>
+              </Box>
+            );
+          })}
+        </FlexBox>
+      </Container>
     </ContentContainer>
   );
 };

@@ -14,7 +14,6 @@ body{
     font-size: 16px;
     font-weight: 400;
     line-height: 1.2;
-    background: ${theme.bg};
     color: #000;
 }
 a{

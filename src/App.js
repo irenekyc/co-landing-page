@@ -5,21 +5,21 @@ import { theme } from "./theme";
 
 import NavBar from "./components/NavBar";
 import HeroContent from "./components/HeroContent";
+import Footer from "./components/Footer";
 
 function App() {
   const Hero = styled.section`
     width: 100%;
-    height: 100vh;
+    min-height: 120vh;
     position: relative;
-    z-index: 1;
     overflow: hidden;
+    background: ${theme.bg};
   `;
   const HeroBG = styled.div`
     position: absolute;
     content: " ";
     width: 100%;
     height: 100%;
-    z-index: 2;
   `;
 
   const HeroBGUnder = styled(HeroBG)`
@@ -42,11 +42,12 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Hero>
+        <HeroContent theme={theme} />
+        <NavBar theme={theme} />
         <HeroBGUnder id="under" />
         <HeroBGUp id="upperbg" />
-        <HeroContent />
-        <NavBar theme={theme} />
       </Hero>
+      <Footer theme={theme} />
     </ThemeProvider>
   );
 }
