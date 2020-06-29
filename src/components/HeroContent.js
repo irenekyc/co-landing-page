@@ -16,13 +16,14 @@ const HeroContent = ({ theme }) => {
     transform: translate(-50%, -50%);
     text-align: center;
     width: 100%;
-    z-index: 200;
+    z-index: 100;
   `;
 
   const HeroHeading = styled.h1`
     font-size: 36px;
     margin-bottom: 1rem;
     font-weight: 500;
+    padding: 0 2rem;
   `;
 
   const HeroText = styled.p`
@@ -47,6 +48,8 @@ const HeroContent = ({ theme }) => {
     border-radius: 24px;
     max-width: 320px;
     box-shadown: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: auto;
     img {
       width: 75px;
     }

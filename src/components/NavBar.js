@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Container from "../Layout/Container";
 import FlexBox from "../Layout/FlexBox";
+import HamburgerIcon from "./bars-solid.svg";
 
 const NavBar = ({ theme }) => {
   const NavBar = styled.nav`
@@ -43,7 +44,32 @@ const NavBar = ({ theme }) => {
     &:last-child {
       margin-right: 0;
     }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   `;
+
+  const HamburgerBtn = styled.div`
+    @media (max-width: 768px) {
+      display: block;
+      width: 40px;
+      height: 40px;
+      color: ${theme.Link};
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+      img {
+        width: 60%;
+      }
+    }
+  `;
+
+  const openMobileMenu = () => {
+    console.log("click");
+  };
   return (
     <NavBar>
       <Container size="wide">
@@ -51,6 +77,13 @@ const NavBar = ({ theme }) => {
           <Logo>
             <img src="assets/CO.svg" alt="CO Logo" />
           </Logo>
+          <HamburgerBtn onClick={openMobileMenu}>
+            <img
+              src={HamburgerIcon}
+              alt="mobile menu button"
+              onClick={openMobileMenu}
+            />
+          </HamburgerBtn>
           <FlexBox direction="row" justify="flex-end" align="center">
             <NavLinkItems as="a" href="#">
               Color Oracle

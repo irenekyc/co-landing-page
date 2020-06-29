@@ -8,6 +8,10 @@ const FlexBox = ({ direction, justify, align, children }) => {
     flex-direction: ${direction};
     justify-content: ${justify};
     align-items: ${align};
+
+    @media (max-width: 1024px) {
+      flex-wrap: wrap;
+    }
   `;
 
   return <FlexBox> {children} </FlexBox>;
