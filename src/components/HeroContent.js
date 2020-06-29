@@ -17,6 +17,13 @@ const HeroContent = ({ theme }) => {
     text-align: center;
     width: 100%;
     z-index: 100;
+
+    @media (max-width: 768px) {
+      min-height: 120vh;
+    }
+    @media (max-width: 500px) {
+      min-height: 150vh;
+    }
   `;
 
   const HeroHeading = styled.h1`

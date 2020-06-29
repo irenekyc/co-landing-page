@@ -14,6 +14,13 @@ function App() {
     position: relative;
     overflow: hidden;
     background: ${theme.bg};
+
+    @media (max-width: 1024px) {
+      min-height: 130vh;
+    }
+    @media (max-width: 768px) {
+      min-height: 200vh;
+    }
   `;
   const HeroBG = styled.div`
     position: absolute;
