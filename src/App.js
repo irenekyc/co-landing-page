@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 function App() {
   const Hero = styled.section`
     width: 100%;
-    min-height: 120vh;
+    min-height: 100vh;
     position: relative;
     overflow: hidden;
     background: ${theme.bg};
@@ -19,22 +19,23 @@ function App() {
     position: absolute;
     content: " ";
     width: 100%;
-    height: 100%;
   `;
 
   const HeroBGUnder = styled(HeroBG)`
     background: url("assets/Vector 1.svg") no-repeat;
-    background-size: contain;
-    background-position: top;
-    top: -50px;
+    background-size: cover;
+    background-position: bottom center;
+    height: 250px;
+    top: -100px;
     left: 0;
   `;
 
   const HeroBGUp = styled(HeroBG)`
     background: url("assets/Vector 2.svg") no-repeat;
-    background-size: contain;
-    background-position: top;
-    top: -50px;
+    background-size: cover;
+    background-position: bottom center;
+    height: 289px;
+    top: -150px;
     left: 90px;
   `;
 

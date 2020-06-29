@@ -8,7 +8,8 @@ import { DownloadData } from "../data";
 const HeroContent = ({ theme }) => {
   console.log(DownloadData);
   const ContentContainer = styled.div`
-    padding: 5rem 0;
+    padding-top: 8rem;
+    padding-bottom: 2rem;
     position: absolute;
     top: 50%;
     left: 50%;
