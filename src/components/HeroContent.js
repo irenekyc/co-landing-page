@@ -92,7 +92,7 @@ const HeroContent = ({ theme }) => {
 
   return (
     <ContentContainer>
-      <HeroHeading>Design for the color impaired</HeroHeading>
+      <HeroHeading>Design for the color impaired.</HeroHeading>
       <HeroText>
         Color Oracle is a free color blindness simulator for Windows, Mac and
         Linux. It takes the guesswork out of designing for color blindness by
